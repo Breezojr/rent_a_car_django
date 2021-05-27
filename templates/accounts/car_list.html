@@ -16,7 +16,7 @@
                 {% for car in cars %}
                 <div class="car-grid-item">
                     <a href="{{ car.get_absolute_url }}">
-                        <img src="{{ car.image.url}}" />
+                        <img src="{% if car.image %}{{ car.image.url }}{% else %}#{% endif %}" />
                         <div class="price-box">
                             <h3>{{ car.name}}</h3>
                             <p>${{ car.daily_rent }}/ day</p>
